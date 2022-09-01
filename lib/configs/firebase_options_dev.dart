@@ -54,11 +54,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: "AIzaSyC1RuC3Erxei0GkyMs52fn-fwGeTkebBvE",
-    appId: "1:864011699942:web:c4147dca40e8f8f986dd27",
+    appId: "1:864011699942:web:e20ff292d4a1a4a586dd27",
     messagingSenderId: "864011699942",
     projectId: "hospital-management-dev",
     authDomain: "hospital-management-dev.firebaseapp.com",
     storageBucket: "hospital-management-dev.appspot.com",
-    measurementId: "G-EBT4Y1ZBLC"
+    measurementId: "G-ERD66FZCWD",
   );
 }
