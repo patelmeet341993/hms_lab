@@ -71,6 +71,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'components/custom_bottom_navigation_bar.dart';
+import 'dashboard_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "/HomeScreen";
@@ -88,53 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     themeData = Theme.of(context);
     return mainBody();
-    // return Container(
-    //   child: Scaffold(
-    //     appBar: AppBar(
-    //       title: const Text("Home Screen"),
-    //       actions: [
-    //         IconButton(
-    //           onPressed: () {
-    //             AuthenticationController().logout(context: context);
-    //           },
-    //           icon: const Icon(Icons.logout),
-    //         )
-    //       ],
-    //     ),
-    //     body: Center(
-    //       child: Column(
-    //         mainAxisAlignment: MainAxisAlignment.center,
-    //         crossAxisAlignment: CrossAxisAlignment.center,
-    //         children: [
-    //           const Text("Home Body"),
-    //           const SizedBox(height: 20,),
-    //           Consumer<AdminUserProvider>(
-    //             builder: (BuildContext context, AdminUserProvider adminUserProvider, Widget? child) {
-    //               AdminUserModel? adminUserModel = adminUserProvider.getAdminUserModel();
-    //               if(adminUserModel == null) {
-    //                 return const Text("Not Logged in");
-    //               }
-    //               return Column(
-    //                 children: [
-    //                   Text("User Name:${adminUserProvider.getAdminUserModel()!.name}"),
-    //                   Text("User Role:${adminUserProvider.getAdminUserModel()!.role}"),
-    //                 ],
-    //               );
-    //             },
-    //           ),
-    //           const SizedBox(height: 20,),
-    //           FlatButton(
-    //             onPressed: () {
-    //               VisitController().createDummyVisitDataInFirestore();
-    //               // PatientController().createDummyPatientDataInFirestore();
-    //             },
-    //             child: const Text("Create Visit"),
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // );
   }
 
   Widget mainBody(){
@@ -150,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Icons.file_copy
       ],
       screens: [
-        Container(child: const Text("Dashboard"),),
+        DashboardScreen(),
         Container(child: const Text("History"),),
         Container(child: const Text("Treatment"),),
       ],

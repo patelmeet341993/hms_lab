@@ -7,6 +7,7 @@ import '../controllers/navigation_controller.dart';
 import '../providers/admin_user_provider.dart';
 import '../providers/app_theme_provider.dart';
 import '../providers/connection_provider.dart';
+import '../providers/patient_provider.dart';
 import '../utils/logger_service.dart';
 
 class MyApp extends StatelessWidget {
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<AppThemeProvider>(create: (_) => AppThemeProvider(), lazy: false),
         ChangeNotifierProvider<ConnectionProvider>(create: (_) => ConnectionProvider(), lazy: false),
         ChangeNotifierProvider<AdminUserProvider>(create: (_) => AdminUserProvider(), lazy: false),
+        ChangeNotifierProvider<PatientProvider>(create: (_) => PatientProvider(), lazy: false),
       ],
       child: MainApp(),
     );
