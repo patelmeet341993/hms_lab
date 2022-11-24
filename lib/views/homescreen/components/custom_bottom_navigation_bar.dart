@@ -1,16 +1,14 @@
-
 import 'dart:math';
 
+import 'package:hms_models/utils/size_config.dart';
 import 'package:lab/providers/app_theme_provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../configs/app_theme.dart';
-import '../../../utils/SizeConfig.dart';
 import '../../common/components/ScreenMedia.dart';
 import 'dashboard_header.dart';
-
 
 class CustomBottomNavigation extends StatefulWidget {
   final List<IconData> icons;
@@ -24,7 +22,7 @@ class CustomBottomNavigation extends StatefulWidget {
   final Color? splashColor, highlightColor, brandTextColor, verticalDividerColor;
   final Widget? floatingActionButton;
 
-   CustomBottomNavigation(
+  const CustomBottomNavigation(
       {Key? key,
         required this.icons,
         this.activeIcons = const [],

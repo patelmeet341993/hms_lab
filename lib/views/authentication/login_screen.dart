@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hms_models/utils/my_print.dart';
+import 'package:hms_models/utils/my_safe_state.dart';
+import 'package:hms_models/utils/my_toast.dart';
 
 import '../../configs/app_strings.dart';
 import '../../configs/app_theme.dart';
 import '../../controllers/authentication_controller.dart';
-import '../../utils/logger_service.dart';
-import '../../utils/my_safe_state.dart';
-import '../../utils/my_toast.dart';
 import '../common/components/loading_widget.dart';
 import '../common/components/modal_progress_hud.dart';
 
@@ -31,13 +31,13 @@ class _LoginScreenState extends State<LoginScreen> with MySafeState {
 
     // await Future.delayed(const Duration(seconds: 3));
     bool isLoggedIn = await AuthenticationController().loginAdminUserWithUsernameAndPassword(context: context, userName: userName, password: password,);
-    Log().i("isLoggedIn:$isLoggedIn");
+    MyPrint.printOnConsole("isLoggedIn:$isLoggedIn");
 
     isLoading = false;
     mySetState();
 
     if(!isLoggedIn) {
-      MyToast.showError("Login Failed", context);
+      MyToast.showError(context: context, msg: "Login Failed",);
     }
   }
 
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> with MySafeState {
         ),
         body: Center(
           child: Container(
-            constraints: BoxConstraints(maxWidth: 700),
+            constraints: const BoxConstraints(maxWidth: 700),
             child: Form(
               key: _globalKey,
               child: Column(
@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> with MySafeState {
                   const SizedBox(height: 20,),
                   TextFormField(
                     controller: usernameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: "Username",
                     ),
                     validator: (String? text) {
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> with MySafeState {
                   TextFormField(
                     controller: passwordController,
                     keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: "Password",
                     ),
                     validator: (String? text) {

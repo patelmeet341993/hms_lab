@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hms_models/models/admin_user/admin_user_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../controllers/authentication_controller.dart';
-import '../../models/admin_user_model.dart';
 import '../../providers/admin_user_provider.dart';
 
 class DashboardScreen extends StatefulWidget {

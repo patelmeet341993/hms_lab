@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hms_models/utils/my_toast.dart';
 import 'package:provider/provider.dart';
 
 import '../configs/app_strings.dart';
 import '../providers/connection_provider.dart';
-import '../utils/my_toast.dart';
 import 'navigation_controller.dart';
 
 class ConnectionController {
@@ -19,7 +19,7 @@ class ConnectionController {
     ConnectionProvider connectionProvider = Provider.of<ConnectionProvider>(NavigationController.mainScreenNavigator.currentContext!, listen: false);
 
     if(!connectionProvider.isInternet && isShowErrorSnakbar && context != null) {
-      MyToast.showError(AppStrings.no_internet, context);
+      MyToast.showError(context: context, msg: AppStrings.no_internet,);
     }
 
     return connectionProvider.isInternet;
